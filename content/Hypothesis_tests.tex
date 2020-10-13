@@ -232,8 +232,12 @@ T_n = n\sum_{k=1}^K\frac{(\hat{p}_k - p^0_k)^2}{p^0_k} \xrightarrow[n \rightarro
 \psi_\alpha = \mathbb{1}\{T_n > q_\alpha(\chi^2_{K-1})\}
 \end{align*}
 \subsection{Kolmogorov-Smirnov test}
+\begin{align*}
+T_n = \sqrt{n}\underset{i}{\max}(\underset{\delta \in \{-1,0\}}{\max}\mid{ \frac{i+\delta}{n} - F^{0}(X_{(i)}})\mid)
+\end{align*}
 \subsection{Kolmogorov-Lilliefors test}
-\subsection{QQ plots}
+$T_n = \underset{t \in R}{\sup}(\mid{F_{n}(t) -  \Phi_{\hat{\mu},\hat{\sigma}^2}(t)}\mid)$
+\subsection{QQ plots} test
 \textbf{Heavier tails}: below > above the diagonal.\\
 \textbf{Lighter tails}: above > below the diagonal.\\
 \textbf{Right-skewed}: above > below > above the diagonal.\\

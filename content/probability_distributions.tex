@@ -72,7 +72,7 @@ exp (y \underbrace{(\ln (p)-\ln (1-p))}_{\theta } + \underbrace{n\ln (1-p)}_{-b(
 \subsection*{Geometric}
 Number of $T$ trials up to (and including) the first success. 
 
-$p_T(t) = (1-p)^{t-1}, t=1,2,...$\\
+$p_T(t) = (1-p)^{t-1} \cdot p, t=1,2,...$\\
 $\mathbb{E}[T]=\frac{1}{p}$\\
 $var(T)=\frac{1-p}{p^2}$
 
@@ -151,6 +151,42 @@ $\mathbb{E}[N_t]=\lambda t$\\
 
 $Var(N_t)=\lambda t$
 
+Memoryless property: The distance between two consecutive points of a point process on the real line will be an exponential random variable with parameter $\lambda$  (or equivalently, mean $\frac{1}{\lambda}$. This implies that the points have the memoryless property: the existence of one point existing in a finite interval does not affect the probability (distribution) of other points existing \\
+
+Interarrival Times for Poisson Processes\\
+
+If N(t) is a Poisson process with rate $\lambda$, then the interarrival times X1, X2,...  are independent and
+\begin{align*}
+  X_i \sim Exponential(\lambda), \; \textrm{ for }i=1,2,3, \cdots.
+\end{align*}
+Now that we know the distribution of the interarrival times, we can find the distribution of arrival times \\
+
+\begin{align*}
+  T_1=X_1,\\
+  T_2=X_1+X_2,\\
+  T_n=X_1+X_2+\cdots+X_n 
+\end{align*}
+\begin{align*}
+  T_n \sim Erlang(n,\lambda)=Gamma(n, \lambda), \\ 
+  \textrm{ for }n=1,2,3, \cdots.
+\end{align*}
+
+Merging Independent Poisson Processes
+
+Let N1(t), N2(t), ..., Nm(t) be m independent Poisson processes with rates $\lambda_1$, $\lambda_2$,..., $\lambda_m$.\\ 
+Let also $N(t)=N_{1}(t)+N_{2}(t)+...+N_{m}(t)$,for all $t\in [0,\infty)$.\\
+Then, N(t) is a Poisson process with rate $\lambda_1$ + $\lambda_2$+ ... + $\lambda_m$
+
+
+Splitting a Poisson Processes(example!)
+
+Let $N(t)$ be a Poisson process with rate $\lambda$. Here, we divide $N(t)$ to two processes $N_{1}(t)$ and $N_{2}(t)$ in the following way:for each arrival, a coin with $P(H)=p$ is tossed. If the coin lands heads up, the arrival is sent to the first process ($N_{1}(t)$), otherwise -- to second. The coin tosses are independent of each other and are independent of $N(t)$. Then,
+$N_{1}(t)$  is a Poisson process with rate $\lambda p$;
+$N_{2}(t)$  is a Poisson process with rate  $\lambda (1 - p)$;
+$N_{1}(t)$ and $N_{2}(t)$ are independent.
+
+
+
 \subsection*{Exponential}
 Parameter $\lambda$, continuous\\
 $ f_x(x)=
@@ -197,6 +233,7 @@ $f_{\theta}(y) = \exp\big(y\theta - \underbrace{(-\ln(-\theta))}_{b(\theta)} + \
 $\theta = -\lambda = -\frac1{\mu}$\\
 
 $\phi = 1$
+
 
 \subsection*{Shifted Exponential}
 
@@ -324,15 +361,6 @@ $L(x_1\dots x_n;b)=\frac{1(\max_i (x_i \leq b))} {b^n}$\\
 
 Loglikelihood:\\
 
-\subsection*{Cauchy}
-continuous, parameter $m$,
-
-$f_ m(x) = \frac{1}{\pi } \frac{1}{1 + (x - m)^2}$\\
-
-$\mathbb{E}[X]=not defined!$\\
-$Var(X)=not defined!$\\
-
-$\text {med}(X) = P(X > M) = P(X < M)\\ = 1/2 = \displaystyle \int _{1/2}^{\infty } \frac{1}{\pi } \cdot \frac{1}{1 + (x-m)^2} \,  dx$
 
 \subsection*{Chi squared}
 The $\chi _ d^2$ distribution with $d$ degrees of freedom is given by the distribution of $Z_1^2 + Z_2^2 + \cdots + Z_ d^2,$ where $Z_1, \ldots , Z_ d \stackrel{iid}{\sim } \mathcal{N}(0,1)$
