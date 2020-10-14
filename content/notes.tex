@@ -47,3 +47,15 @@ Geometric distr. has memorylessness property.\\
 \textbf{Continuous  case}: $Pr(X > s+t| X > t) = Pr(X > s)$ 
 Exp distr. has memorylessness property.
 
+\subsection{MSE}
+Criterion: $E((\Theta - \hat{\theta})^2)$, minimize hence it follows $\hat{\theta} =E(\Theta)$\\
+optimal mean squared error: $E(((\Theta - E(\Theta))^2)  = var(\Theta)$
+\textbf{LMS estimation of $\Theta$ based on X (data)}: (conditioned MSE), $\hat{\theta} =E(\Theta |X=x)$ \\
+Expected performance, once we have a measurement: $MSE = E( (\Theta - E(\Theta|X=x))^2 | X=x ) = var(\Theta|X=x)$\\
+Expected performance of the design: $MSE = E( (\Theta - E(\Theta|X))^2 ) = E(var(\Theta|X))$
+
+\subsection{Convolution}
+
+\textbf{Discrete case}: Given $Z=X+Y$, where X,Y integer independent\\
+$P(Z=z)= \sum_{k=-\infty}^{k=\infty}P(X=k)P(Y=z-k)$ \\
+\textbf{Continious case}:$f_Z(z)=\int_{-\infty}^{\infty} f_X(x)f_Y(z-x) dx $

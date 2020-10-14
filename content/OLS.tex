@@ -123,12 +123,12 @@ $$ X\hat{\beta} = PY$$
 
 where $P = X(X^\top X)^{-1}X^\top$ is the expression of the projector.
 
-**Statistic inference**: let us suppose that:
+\textbf{Statistic inference}: let us suppose that:
 
-* The design matrix $X$ is deterministic and $rank(X) = p$.
-* The model is **homoscedastic**: $\varepsilon_1, \ldots, \varepsilon_n$ are i.i.d.
-* and the same finite variance.
-* The noise is Gaussian: $\epsilon \sim N_n(0, \sigma^2I_n)$.
+ The design matrix $X$ is deterministic and $rank(X) = p$.
+ The model is \textbf{homoscedastic}: $\varepsilon_1, \ldots, \varepsilon_n$ are i.i.d.
+ and the same finite variance.
+ The noise is Gaussian: $\epsilon \sim N_n(0, \sigma^2I_n)$.
 
 We therefore have:
 
@@ -154,7 +154,7 @@ By **Cochran's Theorem**:
 
 $$ (n-p)\frac{\hat{\sigma^2}}{\sigma^2} \sim \chi^2_{n-p}, \quad \hat\beta \perp \hat{\sigma^2}$$
 
-**Significance test**: let us test $H_0: \beta_j = 0$ against $H_1: \beta_j \neq 0$. Let us call
+\textbf{Significance test}: let us test $H_0: \beta_j = 0$ against $H_1: \beta_j \neq 0$. Let us call
 
 $$\gamma_j = \left((X^\top X)^{-1}\right)_{jj} > 0$$
 
@@ -170,11 +170,11 @@ The test with non-asymptotic level $\alpha$ is given by:
 
 $$\psi_\alpha^{(j)} = \textbf{1}\{|T_n^{(j)}| > q_{\alpha/2}(t_{n-p})\}$$
 
-**Bonferroni's test**: if we want to test the significance level of multiple tests at the same time, we cannot use the same level $\alpha$ for each of them. We must use a stricter test for each of them. Let us consider $S \subseteq \{1, \ldots, p\}$. Let us consider
+\textbf{Bonferroni's test}: if we want to test the significance level of multiple tests at the same time, we cannot use the same level $\alpha$ for each of them. We must use a stricter test for each of them. Let us consider $S \subseteq \{1, \ldots, p\}$. Let us consider
 
 $$H_0: \forall j \in S, \beta_j = 0, \quad H_1: \exists j \in S, \beta_j \neq 0$$
 
-The *Bonferroni's test* with significance level $\alpha$ is given by:
+The \textbf{Bonferroni's test} with significance level $\alpha$ is given by:
 
 $$\psi_\alpha^{(S)} = \max_{j \in S}\psi_{\alpha/K}^{(j)}$$
 
